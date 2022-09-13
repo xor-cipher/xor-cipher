@@ -23,4 +23,4 @@ cpdef bytes xor_cyclic(bytes content, bytes key):
     for i in range(length):
         c_content[i] ^= c_key[i % key_length]
     
-    return bytes(c_content)
+    return c_content
