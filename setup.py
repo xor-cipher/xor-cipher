@@ -8,7 +8,7 @@ def read_readme() -> str:
         return f.read()
 
 setup(
-    name= "xor-cipher",
+    name= "xor_cipher",
     version= "1.0.0",
     description= "A simple, reusable, optimised XOR cipher for Python. ",
     license= "MIT",
@@ -36,6 +36,7 @@ setup(
 
     ext_modules= cythonize(
         "xor_cipher/cipher.pyx",
-        annotate= True,
-    )
+        #annotate= True,
+    ),
+    packages=["xor_cipher"],
 )

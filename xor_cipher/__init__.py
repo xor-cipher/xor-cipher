@@ -1,5 +1,5 @@
-from .cipher import xor_static
-from .cipher import xor_cyclic
+from xor_cipher.cipher import xor_static
+from xor_cipher.cipher import xor_cyclic
 
 def xor_static_str(
     content: str,
