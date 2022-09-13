@@ -1,4 +1,4 @@
-from libc.stdint cimport *
+from cpython.bytes cimport PyBytes_FromStringAndSize
 import cython
 
 # Removes Python's integer checks.
@@ -10,7 +10,7 @@ cpdef bytes xor_static(bytes content, int key):
     for i in range(length):
         c_content[i] ^= key
     
-    return bytes(c_content)
+    return PyBytes_FromStringAndSize(c_content, length)
 
 @cython.cdivision(True)
 cpdef bytes xor_cyclic(bytes content, bytes key):
@@ -23,4 +23,4 @@ cpdef bytes xor_cyclic(bytes content, bytes key):
     for i in range(length):
         c_content[i] ^= c_key[i % key_length]
     
-    return c_content
+    return PyBytes_FromStringAndSize(c_content, length)
