@@ -20,8 +20,6 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.6",
         "License :: OSI Approved :: MIT License",
-        "Development Status :: 3 - Alpha",
-        "Topic :: Database",
     ],
     python_requires=">=3.6",
 
