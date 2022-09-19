@@ -1,5 +1,18 @@
-from xor_cipher.cipher import xor_static
-from xor_cipher.cipher import xor_cyclic
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    def xor_static(content: bytes, key: int) -> bytes:
+        """Creates a copy of `content` and XORs each individual byte with `key`."""
+
+        ...
+
+    def xor_cyclic(content: bytes, key: bytes) -> bytes:
+        """Creates a copy of `content` and XORs each individual byte with the `key` cyclically."""
+
+        ...
+else:
+    from xor_cipher.cipher import xor_static
+    from xor_cipher.cipher import xor_cyclic
 
 def xor_static_str(
     content: str,

@@ -22,7 +22,7 @@ else:
 
 setup(
     name= "xor_cipher",
-    version= "1.0.1",
+    version= "1.0.2",
     description= "A simple, reusable, optimised XOR cipher for Python. ",
     license= "MIT",
     classifiers= [
