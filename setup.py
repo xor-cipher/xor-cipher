@@ -1,15 +1,28 @@
-from setuptools import setup
-
-# Cython MUST be imported after setuptools.
-from Cython.Build import cythonize
+from setuptools import setup, Extension
+import os
 
 def read_readme() -> str:
     with open("README.md") as f:
         return f.read()
 
+cythonise = os.environ.get("CYTHONISE")
+
+extension = "c" if not cythonise else "pyx"
+
+cy_extensions = [
+    Extension("xor_cipher.cipher", [f"xor_cipher/cipher.{extension}"]),
+    Extension("xor_cipher", ["xor_cipher/__init__.py"]),
+]
+
+if cythonise:
+    from Cython.Build import cythonize
+    extensions = cythonize(cy_extensions)
+else:
+    extensions = cy_extensions
+
 setup(
     name= "xor_cipher",
-    version= "1.0.0",
+    version= "1.0.1",
     description= "A simple, reusable, optimised XOR cipher for Python. ",
     license= "MIT",
     classifiers= [
@@ -32,9 +45,6 @@ setup(
     long_description_content_type= "text/markdown",
     long_description= read_readme(),
 
-    ext_modules= cythonize(
-        "xor_cipher/cipher.pyx",
-        #annotate= True,
-    ),
+    ext_modules= extensions,
     packages=["xor_cipher"],
 )
