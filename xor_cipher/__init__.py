@@ -10,9 +10,16 @@ if TYPE_CHECKING:
         """Creates a copy of `content` and XORs each individual byte with the `key` cyclically."""
 
         ...
+
+    def xor_cyclic_unsafe(content: bytes, key: bytes) -> bytes:
+        """Same as `xor_cyclic`, however it ommits key length checks. This is faster, but only use
+        when the `key` originates from a trusted source."""
+
+        ...
 else:
     from xor_cipher.cipher import xor_static
     from xor_cipher.cipher import xor_cyclic
+    from xor_cipher.cipher import xor_cyclic_unsafe
 
 def xor_static_str(
     content: str,

@@ -10,7 +10,7 @@ cythonise = os.environ.get("CYTHONISE")
 extension = "c" if not cythonise else "pyx"
 
 cy_extensions = [
-    Extension("xor_cipher.cipher", [f"xor_cipher/cipher.{extension}"]),
+    Extension("xor_cipher.cipher", [f"xor_cipher/cipher.{extension}"], extra_compile_args=["-O3"]),
     Extension("xor_cipher", ["xor_cipher/__init__.py"]),
 ]
 
@@ -22,7 +22,7 @@ else:
 
 setup(
     name= "xor_cipher",
-    version= "1.0.2",
+    version= "1.0.3",
     description= "A simple, reusable, optimised XOR cipher for Python. ",
     license= "MIT",
     classifiers= [
