@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+xor_cipher/__init__.c
+xor_cipher/__init__.py
+xor_cipher/cipher.c
+xor_cipher.egg-info/PKG-INFO
+xor_cipher.egg-info/SOURCES.txt
+xor_cipher.egg-info/dependency_links.txt
+xor_cipher.egg-info/top_level.txt

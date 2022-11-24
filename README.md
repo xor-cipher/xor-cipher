@@ -1,45 +1,145 @@
-# xor-cipher
-A simple, reusable, optimised XOR cipher for Python.
+# `xor-cipher`
 
-## What is xor-cipher
-xor-cipher is a fast implementation of the XOR cipher written using Cython. Our tests show that it can in some cases be >1000x faster than pure Python implementations.
-It has been optimised to breeze through datasets of any size..
+[![License][License Badge]][License]
+[![Version][Version Badge]][Package]
+[![Downloads][Downloads Badge]][Package]
 
-It features the implementations of the cyclic XOR cipher (key of any size) and the static XOR cipher (single-byte key).
+[![Documentation][Documentation Badge]][Documentation]
+[![Check][Check Badge]][Actions]
+[![Test][Test Badge]][Actions]
+[![Coverage][Coverage Badge]][Coverage]
 
-Alongside this, it offers a simple string API which wraps around the fast Cython internals.
+> *Simple, reusable and optimized XOR ciphers in Python.*
 
-## Example
-A demonstration of the features of this library.
+`xor-cipher` is a fast implementation of the XOR cipher written using Cython.
+Our tests show that it can be `1000x` faster than pure Python implementations.
+It has been optimised to breeze through datasets of any size.
 
-### Examples working with bytes
+## Installing
 
-Cyclic XOR Example
+**Python 3.6 or above is required.**
 
-```py
-from xor_cipher import xor_cyclic
+### pip
 
-content = b'0\n\x1e\x14\x00^X\x18\x1d\n\x03\x16Y'
-key = b"xor"
+Installing the library with `pip` is quite simple:
 
-decoded = xor_cyclic(content, key)
-print(decoded)
->>> b'Hello, world!'
+```console
+$ pip install xor-cipher
 ```
 
-Static XOR Example
+Alternatively, the library can be installed from source:
 
-```py
-from xor_cipher import xor_static
-
-content = b'Yt}}~=1f~c}u0'
-key = 0x11
-
-decoded = xor_static(content, key)
-print(decoded)
->>> b'Hello, world!'
+```console
+$ git clone https://github.com/RealistikDash/xor-cipher.git
+$ cd xor-cipher
+$ python -m pip install .
 ```
 
-### Examples working with strings
-Exquivalent functions exist for working with string content. These functions are `xor_cyclic_str` and `xor_static_str`.
-They additionally offer arguments to handle encoding.
+### poetry
+
+You can add `xor-cipher` as a dependency with the following command:
+
+```console
+$ poetry add xor-cipher
+```
+
+Or by directly specifying it in the configuration like so:
+
+```toml
+[tool.poetry.dependencies]
+xor-cipher = "^2.0.0"
+```
+
+Alternatively, you can add it directly from the source:
+
+```toml
+[tool.poetry.dependencies.xor-cipher]
+git = "https://github.com/RealistikDash/xor-cipher.git"
+```
+
+## Examples
+
+### Simple Cipher
+
+Use the `xor` function to perform the simple XOR cipher:
+
+```python
+>>> from xor_cipher import xor
+>>> xor(b"Hello, world!", 0x42)
+b"\n'..-nb5-0.&c"
+```
+
+### Cyclic Cipher
+
+Use the `cyclic_xor` function to perform the cyclic XOR variation:
+
+```python
+>>> from xor_cipher import cyclic_xor
+>>> cyclic_xor(b"Hello, world!", ...)  # TODO
+```
+
+### String Cipher
+
+`xor-cipher` provides `xor_string` and `cyclic_xor_string` as variations of
+`xor` and `cyclic_xor`, respectively:
+
+```python
+>>> from xor_cipher import xor_string
+>>> xor_string("Hello, world!", 0x42)
+"\n'..-nb5-0.&c"
+```
+
+### In-Place Cipher
+
+There are functions to perform the XOR cipher in-place, on `bytearray` instances:
+
+```python
+>>> from xor_cipher import xor_in_place
+>>> data = bytearray(b"Hello, world!")
+>>> xor_in_place(data, 0x42)
+>>> data
+bytearray(b"\n'..-nb5-0.&c")
+```
+
+## Documentation
+
+You can find the documentation [here][Documentation].
+
+## Changelog
+
+You can find the changelog [here][Changelog].
+
+## Security Policy
+
+You can find the Security Policy of `xor-cipher` [here][Security].
+
+## Contributing
+
+If you are interested in contributing to `xor-cipher`, make sure to take a look at the
+[Contributing Guide][Contributing Guide], as well as the [Code of Conduct][Code of Conduct].
+
+## License
+
+`xor-cipher` is licensed under the MIT License terms. See [License][License] for details.
+
+[Actions]: https://github.com/RealistikDash/xor-cipher/actions
+
+[Changelog]: https://github.com/RealistikDash/xor-cipher/blob/main/CHANGELOG.md
+[Code of Conduct]: https://github.com/RealistikDash/xor-cipher/blob/main/CODE_OF_CONDUCT.md
+[Contributing Guide]: https://github.com/RealistikDash/xor-cipher/blob/main/CONTRIBUTING.md
+[Security]: https://github.com/RealistikDash/xor-cipher/blob/main/SECURITY.md
+
+[License]: https://github.com/RealistikDash/xor-cipher/blob/main/LICENSE
+
+[Package]: https://pypi.org/project/xor-cipher
+[Coverage]: https://codecov.io/gh/RealistikDash/xor-cipher
+[Documentation]: https://RealistikDash.github.io/xor-cipher
+
+[License Badge]: https://img.shields.io/pypi/l/xor-cipher
+[Version Badge]: https://img.shields.io/pypi/v/xor-cipher
+[Downloads Badge]: https://img.shields.io/pypi/dm/xor-cipher
+
+[Documentation Badge]: https://github.com/RealistikDash/xor-cipher/workflows/docs/badge.svg
+[Check Badge]: https://github.com/RealistikDash/xor-cipher/workflows/check/badge.svg
+[Test Badge]: https://github.com/RealistikDash/xor-cipher/workflows/test/badge.svg
+[Coverage Badge]: https://codecov.io/gh/RealistikDash/xor-cipher/branch/main/graph/badge.svg
