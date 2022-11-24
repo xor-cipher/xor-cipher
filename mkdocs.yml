@@ -1,0 +1,64 @@
+site_name: xor-cipher
+site_author: nekitdev
+site_description: Singleton types.
+
+repo_name: RealistikDash/xor-cipher
+repo_url: https://github.com/RealistikDash/xor-cipher
+
+remote_branch: github-pages
+
+nav:
+  - Index: "index.md"
+  - Reference: "reference.md"
+  - Changelog: "changelog.md"
+  - Security: "security.md"
+  - Code of Conduct: "code_of_conduct.md"
+  - Contributing: "contributing.md"
+
+watch:
+  - docs
+  - xor_cipher
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+
+      primary: deep purple
+      accent: light blue
+
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+
+      primary: deep orange
+      accent: light blue
+
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+
+plugins:
+  - search
+
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            members_order: source
+            show_signature_annotations: true
+
+          paths: [xor_cipher]
+
+          import:
+            - https://docs.python.org/3/objects.inv
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
