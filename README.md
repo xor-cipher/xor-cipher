@@ -13,7 +13,7 @@
 
 `xor-cipher` is a fast implementation of the XOR cipher written using Cython.
 Our tests show that it can be `1000x` faster than pure Python implementations.
-It has been optimised to breeze through datasets of any size.
+It has been optimized to breeze through datasets of any size.
 
 ## Installing
 
@@ -75,7 +75,8 @@ Use the `cyclic_xor` function to perform the cyclic XOR variation:
 
 ```python
 >>> from xor_cipher import cyclic_xor
->>> cyclic_xor(b"Hello, world!", ...)  # TODO
+>>> cyclic_xor(b"Hello, world!", b"BLOB")
+b"\n)#.-`o5->#&c"
 ```
 
 ### String Cipher
