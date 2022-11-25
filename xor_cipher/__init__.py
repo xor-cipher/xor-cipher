@@ -6,7 +6,7 @@ __url__ = "https://github.com/RealistikDash/xor-cipher"
 __title__ = "xor_cipher"
 __author__ = "RealistikDash, nekitdev"
 __license__ = "MIT"
-__version__ = "2.0.0"
+__version__ = "2.1.0"
 
 from xor_cipher.core import (
     DEFAULT_ENCODING,

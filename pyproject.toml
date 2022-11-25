@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "xor-cipher"
-version = "2.0.0"
+version = "2.1.0"
 description = "Simple, reusable and optimized XOR ciphers in Python."
 authors = ["RealistikDash", "nekitdev"]
 license = "MIT"
@@ -140,7 +140,7 @@ warn_unused_ignores = false  # compatibility
 
 [tool.changelog]
 name = "xor-cipher"
-version = "2.0.0"
+version = "2.1.0"
 url = "https://github.com/RealistikDash/xor-cipher"
 directory = "changes"
 output = "CHANGELOG.md"

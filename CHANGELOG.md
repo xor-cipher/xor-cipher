@@ -2,6 +2,10 @@
 
 <!-- changelogging: start -->
 
+## 2.1.0 (2022-10-25)
+
+No significant changes.
+
 ## 2.0.0 (2022-10-24)
 
 Complete rework of the entire API.
