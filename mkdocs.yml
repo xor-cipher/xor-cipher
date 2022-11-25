@@ -1,6 +1,6 @@
 site_name: xor-cipher
 site_author: nekitdev
-site_description: Singleton types.
+site_description: Simple, reusable and optimized XOR ciphers in Python.
 
 repo_name: RealistikDash/xor-cipher
 repo_url: https://github.com/RealistikDash/xor-cipher
