@@ -3,7 +3,7 @@
 __description__ = "Simple, reusable and optimized XOR ciphers in Python."
 __url__ = "https://github.com/RealistikDash/xor-cipher"
 
-__title__ = "gd"
+__title__ = "xor_cipher"
 __author__ = "RealistikDash, nekitdev"
 __license__ = "MIT"
 __version__ = "2.0.0"
