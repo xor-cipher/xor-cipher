@@ -618,7 +618,7 @@
 </blockquote>
 <p><code>xor-cipher</code> is a fast implementation of the XOR cipher written using Cython.
 Our tests show that it can be <code>1000x</code> faster than pure Python implementations.
-It has been optimised to breeze through datasets of any size.</p>
+It has been optimized to breeze through datasets of any size.</p>
 <h2 id="installing">Installing</h2>
 <p><strong>Python 3.7 or above is required.</strong></p>
 <h3 id="pip">pip</h3>
@@ -652,7 +652,8 @@ It has been optimised to breeze through datasets of any size.</p>
 <h3 id="cyclic-cipher">Cyclic Cipher</h3>
 <p>Use the <code>cyclic_xor</code> function to perform the cyclic XOR variation:</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">xor_cipher</span> <span class="kn">import</span> <span class="n">cyclic_xor</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">cyclic_xor</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>  <span class="c1"># TODO</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">cyclic_xor</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;BLOB&quot;</span><span class="p">)</span>
+<span class="sa">b</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">)#.-`o5-&gt;#&amp;c&quot;</span>
 </code></pre></div>
 <h3 id="string-cipher">String Cipher</h3>
 <p><code>xor-cipher</code> provides <code>xor_string</code> and <code>cyclic_xor_string</code> as variations of
