@@ -2,7 +2,7 @@ from cpython.bytes cimport PyBytes_AsString, PyBytes_FromStringAndSize
 from cpython.bytearray cimport PyByteArray_AsString, PyByteArray_FromStringAndSize
 from cython import cdivision
 from libc.stdlib cimport malloc
-from libc.string cimport strcpy
+from libc.string cimport memcpy
 
 
 # NOTE: `cdivision(True)` removes python integer division checks
@@ -13,9 +13,11 @@ cdef char* copy_bytes(bytes data):
 
     cdef size_t length = len(data)
 
-    cdef char* destination = <char*> malloc((length + 1) * sizeof(char))  # `+ 1` for null-character
+    length += 1  # `+ 1` for null character
 
-    strcpy(destination, source)
+    cdef char* destination = <char*> malloc(length * sizeof(char))  # `+ 1` for null-character
+
+    memcpy(destination, source, length)
 
     return destination
 
