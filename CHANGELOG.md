@@ -2,6 +2,12 @@
 
 <!-- changelogging: start -->
 
+## 2.2.2 (2022-10-25)
+
+### Features
+
+- Fix a memory leak for functions which created a copy of the initial buffer.
+
 ## 2.2.1 (2022-10-25)
 
 ### Features

@@ -1,7 +1,7 @@
 from cpython.bytes cimport PyBytes_AsString, PyBytes_FromStringAndSize
 from cpython.bytearray cimport PyByteArray_AsString, PyByteArray_FromStringAndSize
 from cython import cdivision
-from libc.stdlib cimport malloc
+from libc.stdlib cimport malloc, free
 from libc.string cimport memcpy
 
 
@@ -29,7 +29,11 @@ cpdef bytes xor(bytes data, int key):
     for index in range(length):
         c_data[index] ^= c_key
 
-    return PyBytes_FromStringAndSize(c_data, length)
+    cdef bytes result = PyBytes_FromStringAndSize(c_data, length)
+
+    free(c_data)
+
+    return result
 
 
 @cdivision(True)
@@ -47,7 +51,11 @@ cpdef bytes cyclic_xor(bytes data, bytes key):
     for index in range(length):
         c_data[index] ^= c_key[index % key_length]
 
-    return PyBytes_FromStringAndSize(c_data, length)
+    cdef bytes result = PyBytes_FromStringAndSize(c_data, length)
+
+    free(c_data)
+
+    return result
 
 
 @cdivision(True)
@@ -63,7 +71,11 @@ cpdef bytes cyclic_xor_unsafe(bytes data, bytes key):
     for index in range(length):
         c_data[index] ^= c_key[index % key_length]
 
-    return PyBytes_FromStringAndSize(c_data, length)
+    cdef bytes result = PyBytes_FromStringAndSize(c_data, length)
+
+    free(c_data)
+
+    return result
 
 
 @cdivision(True)
