@@ -8,11 +8,13 @@ on:
 jobs:
   release:
     name: Release
-    runs-on: {{ matrix.os }}
+
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-lastest, windows-latest, macos-latest]
         python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -20,7 +22,7 @@ jobs:
       - name: Setup Python {{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
-          python-version: {{ matrix.python-version }}
+          python-version: ${{ matrix.python-version }}
 
       - name: Update PATH
         run: echo "$HOME/.local/bin" >> $GITHUB_PATH
