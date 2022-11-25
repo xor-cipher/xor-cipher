@@ -17,7 +17,7 @@ It has been optimised to breeze through datasets of any size.
 
 ## Installing
 
-**Python 3.6 or above is required.**
+**Python 3.7 or above is required.**
 
 ### pip
 

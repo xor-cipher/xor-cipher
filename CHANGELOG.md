@@ -15,6 +15,7 @@ Complete rework of the entire API.
 
 ### Changes
 
+- Bump the minimal Python version to `3.7`.
 - Rename `xor_static -> xor`.
 - Rename `xor_cyclic -> cyclic_xor`.
 - Rename `xor_cyclic_unsafe -> cyclic_xor_unsafe`.

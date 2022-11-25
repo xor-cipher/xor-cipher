@@ -72,14 +72,14 @@ WRITE_BINARY = "wb"
 
 def build(setup_keywords: S) -> S:
     distribution = Distribution(dict(name=PACKAGE, ext_modules=extensions))
-    distribution.package_dir = DIRECTORY
+    distribution.package_dir = DIRECTORY  # type: ignore
 
     command = build_ext(distribution)
-    command.ensure_finalized()
+    command.ensure_finalized()  # type: ignore
     command.run()
 
     # Copy built extensions back to the project
-    for output in map(Path, command.get_outputs()):
+    for output in map(Path, command.get_outputs()):  # type: ignore
         relative_extension = output.relative_to(command.build_lib)
 
         if not output.exists():
@@ -92,4 +92,4 @@ def build(setup_keywords: S) -> S:
 
 @entrypoint(__name__)
 def main() -> None:
-    build({})
+    build({})  # type: ignore
