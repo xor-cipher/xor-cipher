@@ -8,14 +8,10 @@ from libc.string cimport memcpy
 # NOTE: `cdivision(True)` removes python integer division checks
 
 
-cdef char* copy_bytes(bytes data):
+cdef char* copy_bytes(bytes data, size_t length):
     cdef char* source = PyBytes_AsString(data)
 
-    cdef size_t length = len(data)
-
-    length += 1  # `+ 1` for null character
-
-    cdef char* destination = <char*> malloc(length * sizeof(char))  # `+ 1` for null-character
+    cdef char* destination = <char*> malloc(length * sizeof(char))
 
     memcpy(destination, source, length)
 
@@ -26,7 +22,7 @@ cdef char* copy_bytes(bytes data):
 cpdef bytes xor(bytes data, int key):
     cdef size_t length = len(data)
 
-    cdef char* c_data = copy_bytes(data)
+    cdef char* c_data = copy_bytes(data, length)
 
     cdef char c_key = key
 
@@ -45,7 +41,7 @@ cpdef bytes cyclic_xor(bytes data, bytes key):
 
     cdef size_t length = len(data)
 
-    cdef char* c_data = copy_bytes(data)
+    cdef char* c_data = copy_bytes(data, length)
     cdef char* c_key = key
 
     for index in range(length):
@@ -59,7 +55,7 @@ cpdef bytes cyclic_xor_unsafe(bytes data, bytes key):
     cdef size_t length = len(data)
     cdef size_t key_length = len(key)
 
-    cdef char* c_data = copy_bytes(data)
+    cdef char* c_data = copy_bytes(data, length)
     cdef char* c_key = key
 
     cdef size_t index

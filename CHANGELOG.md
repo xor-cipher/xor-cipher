@@ -2,6 +2,12 @@
 
 <!-- changelogging: start -->
 
+## 2.2.1 (2022-10-25)
+
+### Features
+
+- Optimised the process of memory copying (both in performance and memory usage)
+
 ## 2.2.0 (2022-10-25)
 
 ### Features
