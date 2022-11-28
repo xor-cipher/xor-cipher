@@ -7,7 +7,6 @@
 [![Documentation][Documentation Badge]][Documentation]
 [![Check][Check Badge]][Actions]
 [![Test][Test Badge]][Actions]
-[![Coverage][Coverage Badge]][Coverage]
 
 > *Simple, reusable and optimized XOR ciphers in Python.*
 
@@ -133,7 +132,6 @@ If you are interested in contributing to `xor-cipher`, make sure to take a look 
 [License]: https://github.com/RealistikDash/xor-cipher/blob/main/LICENSE
 
 [Package]: https://pypi.org/project/xor-cipher
-[Coverage]: https://codecov.io/gh/RealistikDash/xor-cipher
 [Documentation]: https://RealistikDash.github.io/xor-cipher
 
 [License Badge]: https://img.shields.io/pypi/l/xor-cipher
@@ -143,4 +141,3 @@ If you are interested in contributing to `xor-cipher`, make sure to take a look 
 [Documentation Badge]: https://github.com/RealistikDash/xor-cipher/workflows/docs/badge.svg
 [Check Badge]: https://github.com/RealistikDash/xor-cipher/workflows/check/badge.svg
 [Test Badge]: https://github.com/RealistikDash/xor-cipher/workflows/test/badge.svg
-[Coverage Badge]: https://codecov.io/gh/RealistikDash/xor-cipher/branch/main/graph/badge.svg
