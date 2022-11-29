@@ -29,7 +29,7 @@ $ pip install xor-cipher
 Alternatively, the library can be installed from source:
 
 ```console
-$ git clone https://github.com/RealistikDash/xor-cipher.git
+$ git clone https://github.com/xor-cipher/xor-cipher.git
 $ cd xor-cipher
 $ python -m pip install .
 ```
@@ -46,14 +46,14 @@ Or by directly specifying it in the configuration like so:
 
 ```toml
 [tool.poetry.dependencies]
-xor-cipher = "^2.2.2"
+xor-cipher = "^2.3.0"
 ```
 
 Alternatively, you can add it directly from the source:
 
 ```toml
 [tool.poetry.dependencies.xor-cipher]
-git = "https://github.com/RealistikDash/xor-cipher.git"
+git = "https://github.com/xor-cipher/xor-cipher.git"
 ```
 
 ## Examples
@@ -105,6 +105,10 @@ bytearray(b"\n'..-nb5-0.&c")
 
 You can find the documentation [here][Documentation].
 
+## Support
+
+If you need support with the library, you can send an [email][Email].
+
 ## Changelog
 
 You can find the changelog [here][Changelog].
@@ -122,22 +126,24 @@ If you are interested in contributing to `xor-cipher`, make sure to take a look 
 
 `xor-cipher` is licensed under the MIT License terms. See [License][License] for details.
 
-[Actions]: https://github.com/RealistikDash/xor-cipher/actions
+[Email]: mailto:support@xor-cipher.com
 
-[Changelog]: https://github.com/RealistikDash/xor-cipher/blob/main/CHANGELOG.md
-[Code of Conduct]: https://github.com/RealistikDash/xor-cipher/blob/main/CODE_OF_CONDUCT.md
-[Contributing Guide]: https://github.com/RealistikDash/xor-cipher/blob/main/CONTRIBUTING.md
-[Security]: https://github.com/RealistikDash/xor-cipher/blob/main/SECURITY.md
+[Actions]: https://github.com/xor-cipher/xor-cipher/actions
 
-[License]: https://github.com/RealistikDash/xor-cipher/blob/main/LICENSE
+[Changelog]: https://github.com/xor-cipher/xor-cipher/blob/main/CHANGELOG.md
+[Code of Conduct]: https://github.com/xor-cipher/xor-cipher/blob/main/CODE_OF_CONDUCT.md
+[Contributing Guide]: https://github.com/xor-cipher/xor-cipher/blob/main/CONTRIBUTING.md
+[Security]: https://github.com/xor-cipher/xor-cipher/blob/main/SECURITY.md
+
+[License]: https://github.com/xor-cipher/xor-cipher/blob/main/LICENSE
 
 [Package]: https://pypi.org/project/xor-cipher
-[Documentation]: https://RealistikDash.github.io/xor-cipher
+[Documentation]: https://xor-cipher.github.io/xor-cipher
 
 [License Badge]: https://img.shields.io/pypi/l/xor-cipher
 [Version Badge]: https://img.shields.io/pypi/v/xor-cipher
 [Downloads Badge]: https://img.shields.io/pypi/dm/xor-cipher
 
-[Documentation Badge]: https://github.com/RealistikDash/xor-cipher/workflows/docs/badge.svg
-[Check Badge]: https://github.com/RealistikDash/xor-cipher/workflows/check/badge.svg
-[Test Badge]: https://github.com/RealistikDash/xor-cipher/workflows/test/badge.svg
+[Documentation Badge]: https://github.com/xor-cipher/xor-cipher/workflows/docs/badge.svg
+[Check Badge]: https://github.com/xor-cipher/xor-cipher/workflows/check/badge.svg
+[Test Badge]: https://github.com/xor-cipher/xor-cipher/workflows/test/badge.svg

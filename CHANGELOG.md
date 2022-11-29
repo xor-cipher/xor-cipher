@@ -2,17 +2,23 @@
 
 <!-- changelogging: start -->
 
+## 2.3.0 (2022-10-29)
+
+### Changes
+
+- Transferred the project to the [`xor-cipher`](https://github.com/xor-cipher) organization.
+
 ## 2.2.2 (2022-10-25)
 
 ### Features
 
-- Fix a memory leak for functions which created a copy of the initial buffer.
+- Fixed the memory leak for functions which created copies of the initial buffer.
 
 ## 2.2.1 (2022-10-25)
 
 ### Features
 
-- Optimised the process of memory copying (both in performance and memory usage)
+- Optimized the process of memory copying (both in performance and memory usage).
 
 ## 2.2.0 (2022-10-25)
 

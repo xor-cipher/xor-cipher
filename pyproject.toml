@@ -1,15 +1,15 @@
 [tool.poetry]
 name = "xor-cipher"
-version = "2.2.2"
+version = "2.3.0"
 description = "Simple, reusable and optimized XOR ciphers in Python."
-authors = ["RealistikDash", "nekitdev"]
+authors = ["nekitdev", "RealistikDash"]
 license = "MIT"
 
 readme = "README.md"
 
-homepage = "https://github.com/RealistikDash/xor-cipher"
-repository = "https://github.com/RealistikDash/xor-cipher"
-documentation = "https://RealistikDash.github.io/xor-cipher"
+homepage = "https://github.com/xor-cipher/xor-cipher"
+repository = "https://github.com/xor-cipher/xor-cipher"
+documentation = "https://xor-cipher.github.io/xor-cipher"
 
 keywords = ["python", "xor", "cipher"]
 
@@ -22,7 +22,7 @@ classifiers = [
 ]
 
 [tool.poetry.urls]
-Issues = "https://github.com/RealistikDash/xor-cipher/issues"
+Issues = "https://github.com/xor-cipher/xor-cipher/issues"
 
 [[tool.poetry.packages]]
 include = "xor_cipher"
@@ -140,8 +140,8 @@ warn_unused_ignores = false  # compatibility
 
 [tool.changelog]
 name = "xor-cipher"
-version = "2.2.2"
-url = "https://github.com/RealistikDash/xor-cipher"
+version = "2.3.0"
+url = "https://github.com/xor-cipher/xor-cipher"
 directory = "changes"
 output = "CHANGELOG.md"
 

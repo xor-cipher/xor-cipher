@@ -1,12 +1,12 @@
 """Simple, reusable and optimized XOR ciphers in Python."""
 
 __description__ = "Simple, reusable and optimized XOR ciphers in Python."
-__url__ = "https://github.com/RealistikDash/xor-cipher"
+__url__ = "https://github.com/xor-cipher/xor-cipher"
 
 __title__ = "xor_cipher"
-__author__ = "RealistikDash, nekitdev"
+__author__ = "nekitdev, RealistikDash"
 __license__ = "MIT"
-__version__ = "2.2.2"
+__version__ = "2.3.0"
 
 from xor_cipher.core import (
     DEFAULT_ENCODING,
