@@ -1,5 +1,4 @@
 from itertools import cycle
-from typing import TYPE_CHECKING
 
 __all__ = (
     "DEFAULT_ENCODING",

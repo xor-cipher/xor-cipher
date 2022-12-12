@@ -2,6 +2,12 @@
 
 <!-- changelogging: start -->
 
+## 2.3.1 (2022-12-12)
+
+### Features
+
+- Exported *in-place* functions.
+
 ## 2.3.0 (2022-10-29)
 
 ### Changes
