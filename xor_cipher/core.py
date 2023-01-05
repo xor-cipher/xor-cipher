@@ -3,7 +3,6 @@ from itertools import cycle
 __all__ = (
     "DEFAULT_ENCODING",
     "DEFAULT_ERRORS",
-    "FAST",
     "cyclic_xor",
     "cyclic_xor_in_place",
     "cyclic_xor_in_place_unsafe",
@@ -192,21 +191,3 @@ def cyclic_xor_string_unsafe(
     result = cyclic_xor(string.encode(encoding, errors), key.encode(encoding, errors))
 
     return result.decode(encoding, errors)
-
-
-FAST = True
-"""Whether the library is fast (i.e. the extension is available)."""
-
-
-try:
-    from xor_cipher.extension import (  # type: ignore
-        cyclic_xor,
-        cyclic_xor_in_place,
-        cyclic_xor_in_place_unsafe,
-        cyclic_xor_unsafe,
-        xor,
-        xor_in_place,
-    )
-
-except ImportError:
-    FAST = False

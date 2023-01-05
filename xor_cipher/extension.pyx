@@ -1,9 +1,10 @@
-from cpython.bytes cimport PyBytes_AsString, PyBytes_FromStringAndSize
 from cpython.bytearray cimport PyByteArray_AsString, PyByteArray_FromStringAndSize
-from cython import cdivision
-from libc.stdlib cimport malloc, free
-from libc.string cimport memcpy
+from cpython.bytes cimport PyBytes_AsString, PyBytes_FromStringAndSize
 
+from cython import cdivision
+
+from libc.stdlib cimport free, malloc
+from libc.string cimport memcpy
 
 # NOTE: `cdivision(True)` removes python integer division checks
 

@@ -58,6 +58,7 @@ plugins:
             - https://docs.python.org/3/objects.inv
 
 markdown_extensions:
+  - admonition
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.snippets
