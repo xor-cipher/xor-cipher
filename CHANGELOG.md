@@ -2,6 +2,12 @@
 
 <!-- changelogging: start -->
 
+## 2.4.0 (2023-01-05)
+
+### Internal
+
+- Migrate to using `setuptools`.
+
 ## 2.3.1 (2022-12-12)
 
 ### Features

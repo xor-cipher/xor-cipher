@@ -1,6 +1,4 @@
 from builtins import hasattr as has_attribute
-from distutils.core import Distribution, Extension
-from distutils.command.build_ext import build_ext
 from os import getenv
 from pathlib import Path
 from shutil import copyfile as copy_file
@@ -8,6 +6,8 @@ from typing import AbstractSet, Any, Dict, TypeVar
 import sys
 
 from entrypoint import entrypoint
+from setuptools import Distribution, Extension
+from setuptools.command.build_ext import build_ext
 
 TRUE = frozenset(("1", "true", "t", "yes", "y"))
 FALSE = frozenset(("0", "false", "f", "no", "n"))
@@ -72,7 +72,6 @@ WRITE_BINARY = "wb"
 
 def build(setup_keywords: S) -> S:
     distribution = Distribution(dict(name=PACKAGE, ext_modules=extensions))
-    distribution.package_dir = DIRECTORY  # type: ignore
 
     command = build_ext(distribution)
     command.ensure_finalized()  # type: ignore
