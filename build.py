@@ -6,8 +6,8 @@ from typing import AbstractSet, Any, Dict, TypeVar
 import sys
 
 from entrypoint import entrypoint
-from setuptools import Distribution, Extension
-from setuptools.command.build_ext import build_ext
+from setuptools import Distribution, Extension  # type: ignore
+from setuptools.command.build_ext import build_ext  # type: ignore
 
 TRUE = frozenset(("1", "true", "t", "yes", "y"))
 FALSE = frozenset(("0", "false", "f", "no", "n"))
