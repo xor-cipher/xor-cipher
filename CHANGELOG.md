@@ -2,9 +2,13 @@
 
 <!-- changelogging: start -->
 
+## 3.0.1 (2023-06-02)
+
+No significant changes.
+
 ## 3.0.0 (2023-01-05)
 
-- Move `xor_cipher.extension` imports into `xor_cipher` prelude instead of `xor_cipher.core`.
+- Moved `xor_cipher.extension` imports into `xor_cipher` prelude instead of `xor_cipher.core`.
   This makes it easy to generate proper documentation and
   allows to test both python and cython implementations.
 
@@ -12,7 +16,7 @@
 
 ### Internal
 
-- Migrate to using `setuptools`.
+- Migrated to using `setuptools`.
 
 ## 2.3.1 (2022-12-12)
 
