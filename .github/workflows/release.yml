@@ -32,7 +32,7 @@ jobs:
         run: poetry config virtualenvs.in-project true
 
       - name: Specify the version
-        run: poetry env use ${{ matrix.python-version }}
+        run: poetry env use python
 
       - name: Build
         run: poetry build
