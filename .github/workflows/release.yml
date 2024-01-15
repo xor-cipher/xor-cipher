@@ -30,7 +30,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install Poetry
-        run: python -m pipx install poetry
+        run: curl -sSL https://install.python-poetry.org | python -
 
       - name: Configure Poetry
         run: poetry config virtualenvs.in-project true
