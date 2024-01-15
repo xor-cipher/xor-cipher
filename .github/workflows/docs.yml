@@ -19,7 +19,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install Poetry
-        run: pipx install poetry --python python
+        run: python -m pipx install poetry
 
       - name: Configure Poetry
         run: poetry config virtualenvs.in-project true
