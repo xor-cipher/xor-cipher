@@ -19,7 +19,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install Poetry
-        run: curl -sSL https://install.python-poetry.org/ | python -
+        run: pipx install poetry --python python
 
       - name: Configure Poetry
         run: poetry config virtualenvs.in-project true
