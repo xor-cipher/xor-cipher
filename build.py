@@ -3,9 +3,10 @@ from builtins import hasattr as has_attribute
 from os import getenv
 from pathlib import Path
 from shutil import copyfile as copy_file
-from typing import AbstractSet, Any, Dict, TypeVar
+from typing import AbstractSet as AnySet
+from typing import Any, Dict, TypeVar
 
-from entrypoint import entrypoint
+from entrypoint import entrypoint  # type: ignore
 from setuptools import Distribution, Extension  # type: ignore
 from setuptools.command.build_ext import build_ext  # type: ignore
 
@@ -15,7 +16,7 @@ FALSE = frozenset(("0", "false", "f", "no", "n"))
 CAN_NOT_PARSE = "can not parse `{}` to `bool`"
 
 
-def parse_bool(string: str, true: AbstractSet[str] = TRUE, false: AbstractSet[str] = FALSE) -> bool:
+def parse_bool(string: str, true: AnySet[str] = TRUE, false: AnySet[str] = FALSE) -> bool:
     string = string.casefold()
 
     if string in true:
@@ -88,6 +89,6 @@ def build(setup_keywords: S) -> S:
     return setup_keywords
 
 
-@entrypoint(__name__)
+@entrypoint(__name__)  # type: ignore
 def main() -> None:
     build({})
