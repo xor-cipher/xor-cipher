@@ -64,7 +64,6 @@ if with_extensions:
 
 
 PACKAGE = "xor-cipher"
-DIRECTORY = "xor_cipher"
 
 READ_BINARY = "rb"
 WRITE_BINARY = "wb"
@@ -74,11 +73,11 @@ def build(setup_keywords: S) -> S:
     distribution = Distribution(dict(name=PACKAGE, ext_modules=extensions))
 
     command = build_ext(distribution)
-    command.ensure_finalized()  # type: ignore
+    command.ensure_finalized()
     command.run()
 
     # Copy built extensions back to the project
-    for output in map(Path, command.get_outputs()):  # type: ignore
+    for output in map(Path, command.get_outputs()):
         relative_extension = output.relative_to(command.build_lib)
 
         if not output.exists():
@@ -91,4 +90,4 @@ def build(setup_keywords: S) -> S:
 
 @entrypoint(__name__)
 def main() -> None:
-    build({})  # type: ignore
+    build({})

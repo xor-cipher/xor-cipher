@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu, windows, macos]
-        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
     defaults:
       run:
@@ -22,23 +22,15 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Update PATH
-        if: ${{ matrix.os }} != "windows"
-        run: echo "$HOME/.local/bin" >> $GITHUB_PATH
-
-      - name: Update PATH for Windows
-        if: ${{ matrix.os }} == "windows"
-        run: echo "$APPDATA\Python\Scripts" >> $GITHUB_PATH
-
       - name: Install Poetry
-        run: curl -sSL https://install.python-poetry.org/ | python -
+        run: pipx install poetry
 
       - name: Configure Poetry
         run: poetry config virtualenvs.in-project true

@@ -6,7 +6,7 @@ __url__ = "https://github.com/xor-cipher/xor-cipher"
 __title__ = "xor_cipher"
 __author__ = "nekitdev, RealistikDash"
 __license__ = "MIT"
-__version__ = "3.0.1"
+__version__ = "3.1.0"
 
 from xor_cipher.core import (
     DEFAULT_ENCODING,
@@ -38,7 +38,7 @@ __all__ = (
 
 
 try:
-    from xor_cipher.extension import (  # type: ignore
+    from xor_cipher.extension import (  # type: ignore[import-not-found, no-redef]
         cyclic_xor,
         cyclic_xor_in_place,
         cyclic_xor_in_place_unsafe,

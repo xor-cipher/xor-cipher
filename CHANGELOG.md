@@ -2,6 +2,12 @@
 
 <!-- changelogging: start -->
 
+## 3.1.0 (2024-01-15)
+
+### Internal
+
+- Dropped Python 3.7 support.
+
 ## 3.0.1 (2023-06-02)
 
 No significant changes.
@@ -53,8 +59,6 @@ No significant changes.
 No significant changes.
 
 ## 2.0.0 (2022-10-24)
-
-Complete rework of the entire API.
 
 ### Features
 

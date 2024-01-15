@@ -17,7 +17,7 @@ It has been optimized to breeze through datasets of any size.
 
 ## Installing
 
-**Python 3.7 or above is required.**
+**Python 3.8 or above is required.**
 
 ### pip
 
@@ -47,7 +47,7 @@ Or by directly specifying it in the configuration like so:
 
 ```toml
 [tool.poetry.dependencies]
-xor-cipher = "^3.0.1"
+xor-cipher = "^3.1.0"
 ```
 
 Alternatively, you can add it directly from the source:
@@ -127,7 +127,7 @@ If you are interested in contributing to `xor-cipher`, make sure to take a look 
 
 `xor-cipher` is licensed under the MIT License terms. See [License][License] for details.
 
-[Email]: mailto:support@xor-cipher.com
+[Email]: mailto:support@xor-cipher.org
 
 [Actions]: https://github.com/xor-cipher/xor-cipher/actions
 
@@ -140,7 +140,7 @@ If you are interested in contributing to `xor-cipher`, make sure to take a look 
 
 [Package]: https://pypi.org/project/xor-cipher
 [Coverage]: https://codecov.io/gh/xor-cipher/xor-cipher
-[Documentation]: https://docs.xor-cipher.com/
+[Documentation]: https://docs.xor-cipher.org/
 
 [License Badge]: https://img.shields.io/pypi/l/xor-cipher
 [Version Badge]: https://img.shields.io/pypi/v/xor-cipher
