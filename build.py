@@ -7,8 +7,8 @@ from typing import AbstractSet as AnySet
 from typing import Any, Dict, TypeVar
 
 from entrypoint import entrypoint
-from setuptools import Distribution, Extension  # type: ignore[import-untyped]
-from setuptools.command.build_ext import build_ext  # type: ignore[import-untyped]
+from setuptools import Distribution, Extension
+from setuptools.command.build_ext import build_ext
 
 TRUE = frozenset(("1", "true", "t", "yes", "y"))
 FALSE = frozenset(("0", "false", "f", "no", "n"))
@@ -56,7 +56,7 @@ LANGUAGE_LEVEL = "3"
 extensions = []
 
 if with_extensions:
-    from Cython.Build import cythonize  # type: ignore[import-untyped]
+    from Cython.Build import cythonize
 
     extensions = cythonize(
         [Extension("xor_cipher.extension", ["xor_cipher/extension.pyx"])],
