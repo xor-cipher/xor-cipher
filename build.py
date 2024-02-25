@@ -6,9 +6,9 @@ from shutil import copyfile as copy_file
 from typing import AbstractSet as AnySet
 from typing import Any, Dict, TypeVar
 
-from entrypoint import entrypoint  # type: ignore
-from setuptools import Distribution, Extension  # type: ignore
-from setuptools.command.build_ext import build_ext  # type: ignore
+from entrypoint import entrypoint
+from setuptools import Distribution, Extension  # type: ignore[import-untyped]
+from setuptools.command.build_ext import build_ext  # type: ignore[import-untyped]
 
 TRUE = frozenset(("1", "true", "t", "yes", "y"))
 FALSE = frozenset(("0", "false", "f", "no", "n"))
@@ -56,7 +56,7 @@ LANGUAGE_LEVEL = "3"
 extensions = []
 
 if with_extensions:
-    from Cython.Build import cythonize  # type: ignore
+    from Cython.Build import cythonize  # type: ignore[import-untyped]
 
     extensions = cythonize(
         [Extension("xor_cipher.extension", ["xor_cipher/extension.pyx"])],
@@ -65,9 +65,6 @@ if with_extensions:
 
 
 PACKAGE = "xor-cipher"
-
-READ_BINARY = "rb"
-WRITE_BINARY = "wb"
 
 
 def build(setup_keywords: S) -> S:
@@ -89,6 +86,6 @@ def build(setup_keywords: S) -> S:
     return setup_keywords
 
 
-@entrypoint(__name__)  # type: ignore
+@entrypoint(__name__)
 def main() -> None:
     build({})
