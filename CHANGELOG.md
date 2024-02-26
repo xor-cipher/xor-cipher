@@ -2,6 +2,16 @@
 
 <!-- changelogging: start -->
 
+## 3.2.1 (2024-02-26)
+
+No significant changes.
+
+## 3.2.0 (2024-02-25)
+
+### Internal
+
+- Improved typing.
+
 ## 3.1.0 (2024-01-15)
 
 ### Internal
