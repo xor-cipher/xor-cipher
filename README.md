@@ -79,17 +79,6 @@ Use the `cyclic_xor` function to perform the cyclic XOR variation:
 b"\n)#.-`o5->#&c"
 ```
 
-### String Cipher
-
-`xor-cipher` provides `xor_string` and `cyclic_xor_string` as variations of
-`xor` and `cyclic_xor`, respectively:
-
-```python
->>> from xor_cipher import xor_string
->>> xor_string("Hello, world!", 0x42)
-"\n'..-nb5-0.&c"
-```
-
 ### In-Place Cipher
 
 There are functions to perform the XOR cipher in-place, on `bytearray` instances:

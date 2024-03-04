@@ -6,3 +6,5 @@
     Imports should happen from `xor_cipher`, which imports extensions accordingly (if available).
 
 ::: xor_cipher.core
+
+::: xor_cipher.keys
