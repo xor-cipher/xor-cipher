@@ -20,12 +20,16 @@ cdef char* copy_bytes(bytes data, size_t length):
 
 
 @cdivision(True)
-cpdef bytes xor(bytes data, int key):
+cpdef bytes xor(bytes data, unsigned char key):
+    if not key:
+        return data
+
     cdef size_t length = len(data)
 
     cdef char* c_data = copy_bytes(data, length)
-
     cdef char c_key = key
+
+    cdef size_t index
 
     for index in range(length):
         c_data[index] ^= c_key
@@ -39,24 +43,10 @@ cpdef bytes xor(bytes data, int key):
 
 @cdivision(True)
 cpdef bytes cyclic_xor(bytes data, bytes key):
-    cdef size_t key_length = len(key)
-
-    if key_length == 0:
+    if not key:
         return data
 
-    cdef size_t length = len(data)
-
-    cdef char* c_data = copy_bytes(data, length)
-    cdef char* c_key = key
-
-    for index in range(length):
-        c_data[index] ^= c_key[index % key_length]
-
-    cdef bytes result = PyBytes_FromStringAndSize(c_data, length)
-
-    free(c_data)
-
-    return result
+    return cyclic_xor_unsafe(data, key)
 
 
 @cdivision(True)
@@ -80,11 +70,16 @@ cpdef bytes cyclic_xor_unsafe(bytes data, bytes key):
 
 
 @cdivision(True)
-cpdef xor_in_place(bytearray data, int key):
+cpdef xor_in_place(bytearray data, unsigned char key):
+    if not key:
+        return
+
     cdef size_t length = len(data)
 
     cdef char* c_data = data
     cdef char c_key = key
+
+    cdef size_t index
 
     for index in range(length):
         c_data[index] ^= c_key
@@ -92,18 +87,10 @@ cpdef xor_in_place(bytearray data, int key):
 
 @cdivision(True)
 cpdef cyclic_xor_in_place(bytearray data, bytes key):
-    cdef size_t key_length = len(key)
-
-    if key_length == 0:
+    if not key:
         return
 
-    cdef size_t length = len(data)
-
-    cdef char* c_data = data
-    cdef char* c_key = key
-
-    for index in range(length):
-        c_data[index] ^= c_key[index % key_length]
+    return cyclic_xor_in_place_unsafe(data, key)
 
 
 @cdivision(True)

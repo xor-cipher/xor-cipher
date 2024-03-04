@@ -2,6 +2,21 @@
 
 <!-- changelogging: start -->
 
+## 4.0.0 (2024-03-04)
+
+### Changes
+
+- Added byte key validation.
+
+### Removals
+
+- Removed `xor_string`, `cyclic_xor_string` and `cyclic_xor_string_unsafe`.
+- `DEFAULT_ENCODING` and `DEFAULT_ERRORS` are not used anymore, therefore they were removed as well.
+
+### Internal
+
+- Improved typing.
+
 ## 3.2.1 (2024-02-26)
 
 No significant changes.

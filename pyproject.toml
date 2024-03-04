@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "xor-cipher"
-version = "3.2.1"
+version = "4.0.0"
 description = "Simple, reusable and optimized XOR ciphers in Python."
 authors = ["nekitdev", "RealistikDash"]
 license = "MIT"
@@ -45,6 +45,8 @@ script = "build.py"
 
 [tool.poetry.dependencies]
 python = ">= 3.8"
+annotated-types = ">= 0.6.0"
+typing-extensions = ">= 4.10.0"
 
 [tool.poetry.group.format.dependencies]
 ruff = "0.3.0"
@@ -60,6 +62,7 @@ python = ">= 3.9"
 coverage = "7.4.3"
 pytest = "8.0.2"
 pytest-cov = "4.1.0"
+hypothesis = "6.98.15"
 
 [tool.poetry.group.docs]
 optional = true
@@ -92,6 +95,7 @@ source = ["xor_cipher"]
 ignore_errors = true
 exclude_lines = [
     "pragma: never",
+    "pragma: delegate",
     "pragma: no cover",
     "if TYPE_CHECKING",
     "@overload",
@@ -111,7 +115,7 @@ exclude = ["build.py"]
 
 [tool.changelogging]
 name = "xor-cipher"
-version = "3.2.1"
+version = "4.0.0"
 url = "https://github.com/xor-cipher/xor-cipher"
 directory = "changes"
 output = "CHANGELOG.md"
@@ -128,5 +132,5 @@ wrap_size = 100
 display = ["feature", "change", "fix", "security", "deprecation", "removal", "internal"]
 
 [build-system]
-requires = ["poetry-core >= 1.9.0", "cython >= 3.0.8", "entrypoint >= 2.0.1", "setuptools >= 69.1.1"]
+requires = ["poetry-core >= 1.9.0", "cython >= 3.0.8", "entrypoint >= 2.0.2", "setuptools >= 69.1.1"]
 build-backend = "poetry.core.masonry.api"
