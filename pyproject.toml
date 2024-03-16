@@ -7,7 +7,7 @@ license = "MIT"
 
 readme = "README.md"
 
-homepage = "https://github.com/xor-cipher/xor-cipher"
+homepage = "https://xor-cipher.org/"
 repository = "https://github.com/xor-cipher/xor-cipher"
 documentation = "https://docs.xor-cipher.org/"
 
@@ -49,27 +49,27 @@ annotated-types = ">= 0.6.0"
 typing-extensions = ">= 4.10.0"
 
 [tool.poetry.group.format.dependencies]
-ruff = "0.3.0"
+ruff = "0.3.3"
 
 [tool.poetry.group.check.dependencies]
-mypy = "1.8.0"
+mypy = "1.9.0"
 
 [tool.poetry.group.check.dependencies.pre-commit]
 version = "3.6.2"
 python = ">= 3.9"
 
 [tool.poetry.group.test.dependencies]
-coverage = "7.4.3"
-pytest = "8.1.0"
+coverage = "7.4.4"
+pytest = "8.1.1"
 pytest-cov = "4.1.0"
-hypothesis = "6.98.15"
+hypothesis = "6.99.6"
 
 [tool.poetry.group.docs]
 optional = true
 
 [tool.poetry.group.docs.dependencies]
 mkdocs = "1.5.3"
-mkdocs-material = "9.5.12"
+mkdocs-material = "9.5.13"
 
 [tool.poetry.group.docs.dependencies.mkdocstrings]
 version = "0.24.0"
@@ -79,7 +79,7 @@ extras = ["python"]
 optional = true
 
 [tool.poetry.group.release.dependencies]
-changelogging = "1.4.1"
+changelogging = "1.4.2"
 
 [tool.ruff]
 line-length = 100
@@ -132,5 +132,5 @@ wrap_size = 100
 display = ["feature", "change", "fix", "security", "deprecation", "removal", "internal"]
 
 [build-system]
-requires = ["poetry-core >= 1.9.0", "cython >= 3.0.8", "entrypoint >= 2.0.2", "setuptools >= 69.1.1"]
+requires = ["poetry-core >= 1.9.0", "maturin >= 1.5.0", "entrypoint >= 2.0.3"]
 build-backend = "poetry.core.masonry.api"

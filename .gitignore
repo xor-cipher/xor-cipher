@@ -81,6 +81,10 @@ cython_debug/
 
 poetry.lock
 
-# cython-generated files
+# builds
 
-*.c
+target/
+
+# remove if lock file should be included
+
+Cargo.lock
