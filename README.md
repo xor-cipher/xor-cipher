@@ -11,7 +11,7 @@
 
 > *Simple, reusable and optimized XOR ciphers in Python.*
 
-`xor-cipher` is a fast implementation of the XOR cipher written using Cython.
+`xor-cipher` is a fast implementation of the XOR cipher written using Rust.
 Our tests show that it can be `1000x` faster than pure Python implementations.
 It has been optimized to breeze through datasets of any size.
 
