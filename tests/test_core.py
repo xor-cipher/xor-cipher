@@ -1,8 +1,9 @@
 import pytest
 from hypothesis import given
 
-from tests.strategies import binary_strategy, bytes_strategy
+from tests.strategies import byte_strategy, bytes_strategy
 from xor_cipher.core import cyclic_xor, cyclic_xor_in_place, xor, xor_in_place
+from xor_cipher.keys import byte
 
 EXPECTED = b"Hello, world!"
 
@@ -44,8 +45,8 @@ def given_cyclic_key() -> bytes:
     return CYCLIC_KEY
 
 
-@given(binary_strategy, bytes_strategy)
-def test_xor(data: bytes, key: int) -> None:
+@given(bytes_strategy, byte_strategy)
+def test_xor(data: bytes, key: byte) -> None:
     assert xor(xor(data, key), key) == data
 
 
@@ -55,12 +56,12 @@ def test_cyclic_xor_expected(
     assert cyclic_xor(given_cyclic_data, given_cyclic_key) == expected_data
 
 
-@given(binary_strategy, binary_strategy)
+@given(bytes_strategy, bytes_strategy)
 def test_cyclic_xor(data: bytes, key: bytes) -> None:
     assert cyclic_xor(cyclic_xor(data, key), key) == data
 
 
-def test_xor_in_place_expected(given_data: bytes, given_key: int, expected_data: bytes) -> None:
+def test_xor_in_place_expected(given_data: bytes, given_key: byte, expected_data: bytes) -> None:
     array = bytearray(given_data)
 
     xor_in_place(array, given_key)
@@ -68,8 +69,8 @@ def test_xor_in_place_expected(given_data: bytes, given_key: int, expected_data:
     assert array == expected_data
 
 
-@given(binary_strategy, bytes_strategy)
-def test_xor_in_place(data: bytes, key: int) -> None:
+@given(bytes_strategy, byte_strategy)
+def test_xor_in_place(data: bytes, key: byte) -> None:
     array = bytearray(data)
 
     xor_in_place(array, key)
@@ -88,7 +89,7 @@ def test_cyclic_xor_in_place_expected(
     assert array == expected_data
 
 
-@given(binary_strategy, binary_strategy)
+@given(bytes_strategy, bytes_strategy)
 def test_cyclic_xor_in_place(data: bytes, key: bytes) -> None:
     array = bytearray(data)
 
