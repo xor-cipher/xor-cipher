@@ -3,7 +3,7 @@ from hypothesis import given
 
 from tests.strategies import byte_strategy, bytes_strategy
 from xor_cipher.core import cyclic_xor, cyclic_xor_in_place, xor, xor_in_place
-from xor_cipher.keys import byte
+from xor_cipher.typing import byte
 
 EXPECTED = b"Hello, world!"
 

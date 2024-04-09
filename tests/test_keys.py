@@ -1,11 +1,11 @@
 from hypothesis import given
 from pytest import raises
 
-from tests.strategies import invalid_key_strategy
-from xor_cipher.keys import validate_key
+from tests.strategies import not_byte_strategy
+from xor_cipher.typing import check_byte
 
 
-@given(invalid_key_strategy)
-def test_validate_key(invalid_key: int) -> None:
+@given(not_byte_strategy)
+def test_check_byte(not_byte: int) -> None:
     with raises(ValueError):
-        validate_key(invalid_key)
+        check_byte(not_byte)
