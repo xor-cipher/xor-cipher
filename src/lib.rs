@@ -11,13 +11,13 @@ use pyo3::{pyfunction as py_function, pymodule as py_module, wrap_pyfunction as 
 
 mod rust;
 
-static EXPECTED_KEY: &'static str = "expected key in range [0, 255]";
+static EXPECTED_BYTE: &'static str = "expected `byte` (`int` in range `[0, 255]`)";
 
 #[py_function]
 fn xor<'py>(python: Python<'py>, data: &'py PyBytes, key: &'py PyInt) -> PyResult<&'py PyBytes> {
     let rust_key = key
         .extract()
-        .map_err(|_| PyValueError::new_err(EXPECTED_KEY))?;
+        .map_err(|_| PyValueError::new_err(EXPECTED_BYTE))?;
 
     if rust_key == 0 {
         return Ok(data);
@@ -49,7 +49,7 @@ fn cyclic_xor<'py>(python: Python<'py>, data: &'py PyBytes, key: &'py PyBytes) -
 fn xor_in_place(data: &PyByteArray, key: &PyInt) -> PyResult<()> {
     let rust_key = key
         .extract()
-        .map_err(|_| PyValueError::new_err(EXPECTED_KEY))?;
+        .map_err(|_| PyValueError::new_err(EXPECTED_BYTE))?;
 
     let rust_data = unsafe { data.as_bytes_mut() };
 

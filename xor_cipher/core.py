@@ -1,6 +1,6 @@
 from itertools import cycle
 
-from xor_cipher.keys import byte, validate_key
+from xor_cipher.typing import byte, check_byte
 
 __all__ = ("cyclic_xor", "cyclic_xor_in_place", "xor", "xor_in_place")
 
@@ -20,10 +20,13 @@ def xor(data: bytes, key: byte) -> bytes:
         data: The data to encode.
         key: The key to use for encoding. Must be in range `[0, 255]`.
 
+    Raises:
+        ValueError: If the `key` is not [`byte`][xor_cipher.typing.byte].
+
     Returns:
         The encoded data.
     """
-    validate_key(key)
+    check_byte(key)
 
     if not key:
         return data
@@ -62,8 +65,11 @@ def xor_in_place(data: bytearray, key: byte) -> None:
     Arguments:
         data: The data to encode.
         key: The key to use for encoding. Must be in range `[0, 255]`.
+
+    Raises:
+        ValueError: If the `key` is not [`byte`][xor_cipher.typing.byte].
     """
-    validate_key(key)
+    check_byte(key)
 
     if not key:
         return

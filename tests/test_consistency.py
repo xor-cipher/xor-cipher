@@ -6,7 +6,7 @@ from xor_cipher.core import cyclic_xor_in_place as python_cyclic_xor_in_place
 from xor_cipher.core import xor as python_xor
 from xor_cipher.core import xor_in_place as python_xor_in_place
 from xor_cipher.extension import cyclic_xor, cyclic_xor_in_place, xor, xor_in_place
-from xor_cipher.keys import byte
+from xor_cipher.typing import byte
 
 
 @given(bytes_strategy, byte_strategy)

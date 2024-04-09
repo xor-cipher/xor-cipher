@@ -1,13 +1,9 @@
+from funcs.functions import complement
 from hypothesis.strategies import binary, integers
 
-from xor_cipher.keys import MAX_KEY, MIN_KEY
+from xor_cipher.typing import MIN_BYTE, MAX_BYTE, is_byte
 
 bytes_strategy = binary()
-byte_strategy = integers(MIN_KEY, MAX_KEY)
+byte_strategy = integers(MIN_BYTE, MAX_BYTE)
 
-
-def is_invalid_key(key: int) -> bool:
-    return key < MIN_KEY or key > MAX_KEY
-
-
-invalid_key_strategy = integers().filter(is_invalid_key)
+not_byte_strategy = integers().filter(complement(is_byte))

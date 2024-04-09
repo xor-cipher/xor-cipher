@@ -7,4 +7,4 @@
 
 ::: xor_cipher.core
 
-::: xor_cipher.keys
+::: xor_cipher.typing
