@@ -62,7 +62,7 @@ python = ">= 3.9"
 coverage = "7.4.3"
 pytest = "8.1.0"
 pytest-cov = "4.1.0"
-hypothesis = "6.98.15"
+hypothesis = "6.102.6"
 
 [tool.poetry.group.docs]
 optional = true
