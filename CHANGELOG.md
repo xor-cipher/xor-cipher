@@ -2,6 +2,16 @@
 
 <!-- changelogging: start -->
 
+## [5.0.0](https://github.com/xor-cipher/xor-cipher/tree/v5.0.0) (2024-06-26)
+
+### Changes
+
+- The core was rewritten in Rust. ([#55](https://github.com/xor-cipher/xor-cipher/pull/55))
+
+### Removals
+
+- Removed `unsafe` functions. ([#55](https://github.com/xor-cipher/xor-cipher/pull/55))
+
 ## 4.0.0 (2024-03-04)
 
 ### Changes
