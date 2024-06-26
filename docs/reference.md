@@ -1,10 +1,11 @@
 # Reference
 
-!!! warning
+!!! note
 
-    Please note that `xor_cipher.core` contains pure-python implementations.
-    Imports should happen from `xor_cipher`, which imports extensions accordingly (if available).
+    `xor_cipher.python` contains pure-python implementations,
+    while `xor_cipher.core` uses extensions. Usually imports should happen from `xor_cipher`,
+    which will use the fastest available functionality.
 
-::: xor_cipher.core
+::: xor_cipher.python
 
-::: xor_cipher.typing
+::: xor_cipher.bytes
