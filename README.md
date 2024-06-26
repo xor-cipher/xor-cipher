@@ -19,7 +19,7 @@ It has been optimized to breeze through datasets of any size.
 
 **Python 3.8 or above is required.**
 
-### pip
+### `pip`
 
 Installing the library with `pip` is quite simple:
 
@@ -30,12 +30,18 @@ $ pip install xor-cipher
 Alternatively, the library can be installed from source:
 
 ```console
-$ git clone https://github.com/xor-cipher/xor-cipher.git
-$ cd xor-cipher
-$ python -m pip install .
+$ pip install git+https://github.com/xor-cipher/xor-cipher.git
 ```
 
-### poetry
+Or via cloning the repository:
+
+```console
+$ git clone https://github.com/xor-cipher/xor-cipher.git
+$ cd xor-cipher
+$ pip install .
+```
+
+### `poetry`
 
 You can add `xor-cipher` as a dependency with the following command:
 
