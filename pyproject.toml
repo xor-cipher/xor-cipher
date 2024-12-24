@@ -88,7 +88,7 @@ exclude_lines = [
 [tool.coverage.html]
 directory = "coverage"
 
-[tool.pytest.int_options]
+[tool.pytest.ini_options]
 addopts = "--cov src"
 testpaths = ["tests"]
 
