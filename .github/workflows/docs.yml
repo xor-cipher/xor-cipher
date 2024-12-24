@@ -8,7 +8,7 @@ on:
 env:
   bot-name: nekit[bot]
   bot-email: bot@nekit.dev
-  python-version: "3.12"
+  python-version: "3.13"
 
 jobs:
   docs:
@@ -21,22 +21,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Python ${{ env.python-version }}
-        uses: actions/setup-python@v5
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
         with:
+          version: latest
           python-version: ${{ env.python-version }}
-
-      - name: Install Poetry
-        run: pipx install poetry
-
-      - name: Configure Poetry
-        run: poetry config virtualenvs.in-project true
-
-      - name: Specify the version
-        run: poetry env use python
-
-      - name: Install dependencies
-        run: poetry install --with docs
 
       - name: Setup bot user
         run: |
@@ -44,4 +33,4 @@ jobs:
           git config --local user.email ${{ env.bot-email }}
 
       - name: Deploy the documentation
-        run: poetry run mkdocs gh-deploy --force
+        run: uv run mkdocs gh-deploy --force

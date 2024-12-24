@@ -41,26 +41,12 @@ $ cd xor-cipher
 $ pip install .
 ```
 
-### `poetry`
+### `uv`
 
 You can add `xor-cipher` as a dependency with the following command:
 
 ```console
-$ poetry add xor-cipher
-```
-
-Or by directly specifying it in the configuration like so:
-
-```toml
-[tool.poetry.dependencies]
-xor-cipher = "^5.0.0"
-```
-
-Alternatively, you can add it directly from the source:
-
-```toml
-[tool.poetry.dependencies.xor-cipher]
-git = "https://github.com/xor-cipher/xor-cipher.git"
+$ uv add xor-cipher
 ```
 
 ## Examples
@@ -122,7 +108,7 @@ If you are interested in contributing to `xor-cipher`, make sure to take a look 
 
 `xor-cipher` is licensed under the MIT License terms. See [License][License] for details.
 
-[Email]: mailto:support@xor-cipher.org
+[Email]: mailto:support@nekit.dev
 
 [Actions]: https://github.com/xor-cipher/xor-cipher/actions
 
@@ -135,7 +121,7 @@ If you are interested in contributing to `xor-cipher`, make sure to take a look 
 
 [Package]: https://pypi.org/project/xor-cipher
 [Coverage]: https://codecov.io/gh/xor-cipher/xor-cipher
-[Documentation]: https://docs.xor-cipher.org/
+[Documentation]: https://xor-cipher.github.io/xor-cipher
 
 [License Badge]: https://img.shields.io/pypi/l/xor-cipher
 [Version Badge]: https://img.shields.io/pypi/v/xor-cipher

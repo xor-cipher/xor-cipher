@@ -60,7 +60,7 @@ representative at an online or offline event.
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement to
-[conduct@xor-cipher.org][Email].
+[conduct@nekit.dev][Email].
 
 All complaints will be reviewed and investigated promptly and fairly.
 
@@ -126,7 +126,7 @@ For answers to common questions about this code of conduct, see the FAQ at
 [https://contributor-covenant.org/faq][FAQ]. Translations are available at
 [https://contributor-covenant.org/translations][Translations].
 
-[Email]: mailto:conduct@xor-cipher.org
+[Email]: mailto:conduct@nekit.dev
 
 [Home]: https://contributor-covenant.org/
 [v2.1]: https://contributor-covenant.org/version/2/1/code_of_conduct

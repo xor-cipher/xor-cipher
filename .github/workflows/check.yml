@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu, windows, macos]
-        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
 
     runs-on: ${{ matrix.os }}-latest
 
@@ -22,22 +22,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
         with:
+          version: latest
           python-version: ${{ matrix.python-version }}
 
-      - name: Install Poetry
-        run: pipx install poetry
-
-      - name: Configure Poetry
-        run: poetry config virtualenvs.in-project true
-
-      - name: Specify the version
-        run: poetry env use python
-
-      - name: Install dependencies
-        run: poetry install
-
       - name: Run type checks
-        run: poetry run mypy .
+        run: uv run mypy .
