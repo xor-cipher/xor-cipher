@@ -2,6 +2,16 @@
 
 <!-- changelogging: start -->
 
+## [5.0.1](https://github.com/xor-cipher/xor-cipher/tree/v5.0.1) (2024-12-24)
+
+### Removals
+
+- Removed `3.8` from the list of supported Python versions.
+
+### Internal
+
+- Removed `xor-cipher.org`.
+
 ## [5.0.0](https://github.com/xor-cipher/xor-cipher/tree/v5.0.0) (2024-06-26)
 
 ### Changes

@@ -1,1 +1,0 @@
-Removed `xor-cipher.org`.
