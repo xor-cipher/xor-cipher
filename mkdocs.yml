@@ -17,7 +17,7 @@ nav:
 
 watch:
   - docs
-  - xor_cipher
+  - src
 
 theme:
   name: material
